@@ -547,3 +547,273 @@ input { border: none; outline: none; font-family: inherit; }
   background: #F3F4F6;
   color: #6B7280;
 }
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet (768-1024px) */
+@media (max-width: 1024px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .bottom-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .main {
+    padding: 20px 24px;
+  }
+  
+  .header__search {
+    width: 200px;
+  }
+}
+
+/* Mobile (<768px) — sidebar becomes bottom nav */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 0px;
+  }
+  
+  .layout {
+    flex-direction: column;
+    padding-bottom: 72px;
+  }
+  
+  /* Sidebar → bottom navigation */
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    width: 100%;
+    height: auto;
+    padding: 8px 12px;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    z-index: 200;
+  }
+  
+  .sidebar__header {
+    display: none;
+  }
+  
+  .nav {
+    flex-direction: row;
+    gap: 0;
+    flex: 1;
+    justify-content: space-around;
+  }
+  
+  .nav__item {
+    flex-direction: column;
+    padding: 6px 8px;
+    gap: 2px;
+    font-size: 9px;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .nav__item span {
+    font-size: 9px;
+    line-height: 1.1;
+  }
+  
+  .nav__icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .sidebar__user {
+    display: none;
+  }
+  
+  /* Main takes full width */
+  .main {
+    margin-left: 0;
+    padding: 16px;
+  }
+  
+  /* Header */
+  .header {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .header__search {
+    width: 100%;
+    order: 2;
+  }
+  
+  .header__actions {
+    order: 1;
+    margin-left: auto;
+  }
+  
+  .dashboard__title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  
+  /* Stats: 2 columns */
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .stats__card {
+    padding: 14px;
+    gap: 8px;
+  }
+  
+  .stats__icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+  
+  .stats__icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .stats__value {
+    font-size: 18px;
+  }
+  
+  .stats__label {
+    font-size: 11px;
+  }
+  
+  .stats__change {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+  
+  /* Chart */
+  .chart-section {
+    padding: 16px;
+  }
+  
+  .chart-section__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .chart-section__tabs {
+    align-self: stretch;
+  }
+  
+  .tab-btn {
+    flex: 1;
+    text-align: center;
+    padding: 8px 10px;
+  }
+  
+  .chart {
+    height: 180px;
+  }
+  
+  .chart__bar {
+    width: 6px;
+  }
+  
+  .chart__bar-label {
+    font-size: 8px;
+  }
+  
+  .chart__bars {
+    height: 160px;
+  }
+  
+  .chart__bars-wrapper {
+    height: 140px;
+    gap: 3px;
+  }
+  
+  /* Bottom section */
+  .bottom-section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .client-stats,
+  .recent-orders {
+    padding: 16px;
+  }
+  
+  .client-stat-item__value {
+    font-size: 16px;
+  }
+  
+  /* Orders table scrollable */
+  .recent-orders {
+    overflow-x: auto;
+  }
+  
+  .orders-table {
+    min-width: 100%;
+  }
+  
+  .orders-table th,
+  .orders-table td {
+    white-space: nowrap;
+    padding: 10px 8px;
+  }
+  
+  .orders-table th:first-child,
+  .orders-table td:first-child {
+    padding-left: 0;
+  }
+  
+  .orders-table th:last-child,
+  .orders-table td:last-child {
+    padding-right: 0;
+  }
+}
+
+/* Small mobile (<480px) */
+@media (max-width: 480px) {
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .main {
+    padding: 12px;
+  }
+  
+  .stats__card {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+  }
+  
+  .stats__info {
+    flex: 1;
+  }
+  
+  .chart-section__title {
+    font-size: 14px;
+  }
+  
+  .nav__item {
+    padding: 4px 6px;
+  }
+  
+  .nav__item span {
+    font-size: 8px;
+  }
+  
+  .nav__icon {
+    width: 16px;
+    height: 16px;
+  }
+}
